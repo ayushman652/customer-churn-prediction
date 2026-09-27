@@ -44,13 +44,14 @@ The model uses these seven features, rather than all 27 available input columns,
 7. **Evaluate:** Calculate test-set log loss from the actual labels and predicted probabilities.
 8. **Visualize:** Plot the model's seven learned coefficients.
 
+
 ### Why logistic regression?
 
 Despite its name, logistic regression is a classification algorithm. It combines the input features linearly and passes the result through the sigmoid function to produce a probability between 0 and 1:
 
-\[
-P(\text{churn}=1\mid X)=\frac{1}{1+e^{-(w^TX+b)}}
-\]
+$$
+P(\text{churn}=1 \mid X) = \frac{1}{1 + e^{-(w^T X + b)}}
+$$
 
 By default, a probability of at least 0.5 is classified as churn (`1`); otherwise, the prediction is no churn (`0`).
 
@@ -60,11 +61,9 @@ Accuracy considers only the predicted class. **Log loss** also considers the con
 
 For a single binary prediction, with actual label `y` and predicted churn probability `p`:
 
-\[
-L=-[y\log(p)+(1-y)\log(1-p)]
-\]
-
-The reported result is the average loss over the test set.
+$$
+L = -\left[y\log(p) + (1-y)\log(1-p)\right]
+$$
 
 ## Results
 
